@@ -1,0 +1,19 @@
+﻿@model IList<User>
+
+<div>
+    <a class="btn btn-outline-danger" asp-controller="Home" asp-action="AddUser">Kullanıcı Oluşturmak İçin =></a>
+    <ul>
+        @foreach (var user in Model)
+        {
+            <li>ID = @user.Id</li>
+            <li>Username = @user.Username</li>
+            <li>Password = @user.Password</li>
+            <li>Secret Key = @user.SecretKey</li>
+            <hr />
+            <a class="btn btn-outline-danger" asp-controller="Home" asp-action="DeleteUser" asp-route-id="@user.Id"> Kullanıcıyı Pasife Al </a>
+            <a class="btn btn-outline-warning" asp-controller="Home" asp-action="UpdateUser" asp-route-id="@user.Id">Kullanıcı Güncelleme</a>
+            <hr />
+
+        }
+    </ul>
+</div>

@@ -1,0 +1,19 @@
+﻿@model User
+
+<div class="card">
+    <div class="card-header">
+        <h3>(@Model.Id) idli Kullanıcıyı Güncelle </h3>
+    </div>
+    <div class="card-body">
+        <form method="post" asp-controller="Home" asp-action="UpdateUser">
+            <input type="hidden" asp-for="Id" />
+            <label for="userName">Kullanıcı Adı</label>
+            <input id="userName" type="text" asp-for="Username" class="form-control" />
+            <label for="password">Parola</label>
+            <input id="password" type="text" asp-for="Password" class="form-control" />
+            <label for="secretKey">Gizli Anahtar</label>
+            <input id="secretKey" type="text" asp-for="SecretKey" class="form-control" />
+            <button class="btn btn-outline-success" type="submit">Kullanıcıyı Güncelle</button>
+        </form>
+    </div>
+</div>
